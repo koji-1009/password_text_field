@@ -1,7 +1,6 @@
 name: password_text_field
-description: A new Flutter package.
+description: PasswordTextField is a TextField that manages the toggle of obscure.
 version: 0.0.1
-author: Koji Wakamiya
 homepage: https://github.com/koji-1009/password_text_field
 
 environment:
