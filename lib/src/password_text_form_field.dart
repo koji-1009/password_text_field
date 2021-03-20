@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:password_text_field/src/password_text_field.dart';
+import 'package:flutter/services.dart';
 
+import 'password_text_field.dart';
+
+/// A [FormField] that contains a [PasswordTextField].
+/// If you want to see the details of the API, check the [TextFormField].
+///
+/// It has almost the same API as [TextFormField], so it can be replaced.
 class PasswordTextFormField extends FormField<String> {
+  /// Creates a [FormField] that contains a [PasswordTextField].
   PasswordTextFormField({
     Key? key,
     this.controller,
     FocusNode? focusNode,
     InputDecoration decoration = const InputDecoration(),
+    List<TextInputFormatter>? inputFormatters,
     ValueChanged<String>? onChanged,
     VoidCallback? onEditingComplete,
     ValueChanged<String>? onFieldSubmitted,
@@ -30,7 +38,7 @@ class PasswordTextFormField extends FormField<String> {
           enabled: enabled ?? decoration.enabled,
           autovalidateMode:
               autovalidate ? AutovalidateMode.always : autovalidateMode,
-          builder: (FormFieldState<String> field) {
+          builder: (field) {
             final state = field as _PasswordTextFormFieldState;
             final effectiveDecoration = decoration
                 .applyDefaults(Theme.of(field.context).inputDecorationTheme);
@@ -48,6 +56,7 @@ class PasswordTextFormField extends FormField<String> {
                 errorText: field.errorText,
               ),
               textInputAction: textInputAction,
+              inputFormatters: inputFormatters,
               onChanged: onChangedHandler,
               onEditingComplete: onEditingComplete,
               onSubmitted: onFieldSubmitted,
@@ -60,6 +69,10 @@ class PasswordTextFormField extends FormField<String> {
           },
         );
 
+  /// Controls the text being edited.
+  ///
+  /// If null, this widget will create its own [TextEditingController] and
+  /// initialize its [TextEditingController.text] with [initialValue].
   final TextEditingController? controller;
 
   @override
@@ -93,9 +106,11 @@ class _PasswordTextFormFieldState extends FormFieldState<String> {
       oldWidget.controller?.removeListener(_handleControllerChanged);
       widget.controller?.addListener(_handleControllerChanged);
 
-      if (oldWidget.controller != null && widget.controller == null)
-        _controller =
-            TextEditingController.fromValue(oldWidget.controller!.value);
+      if (oldWidget.controller != null && widget.controller == null) {
+        _controller = TextEditingController.fromValue(
+          oldWidget.controller!.value,
+        );
+      }
       if (widget.controller != null) {
         setValue(widget.controller!.text);
         if (oldWidget.controller == null) _controller = null;
@@ -113,8 +128,9 @@ class _PasswordTextFormFieldState extends FormFieldState<String> {
   void didChange(String? value) {
     super.didChange(value);
 
-    if (_effectiveController!.text != value)
+    if (_effectiveController!.text != value) {
       _effectiveController!.text = value ?? '';
+    }
   }
 
   @override
@@ -124,7 +140,8 @@ class _PasswordTextFormFieldState extends FormFieldState<String> {
   }
 
   void _handleControllerChanged() {
-    if (_effectiveController!.text != value)
+    if (_effectiveController!.text != value) {
       didChange(_effectiveController!.text);
+    }
   }
 }
