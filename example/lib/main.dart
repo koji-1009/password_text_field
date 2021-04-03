@@ -5,9 +5,7 @@ void main() {
   runApp(const MyApp());
 }
 
-// ignore: public_member_api_docs
 class MyApp extends StatelessWidget {
-  // ignore: public_member_api_docs
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -21,9 +19,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// ignore: public_member_api_docs
 class MyHomePage extends StatefulWidget {
-  // ignore: public_member_api_docs
   MyHomePage({Key? key}) : super(key: key);
 
   @override

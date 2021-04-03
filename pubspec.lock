@@ -44,7 +44,7 @@ packages:
     source: hosted
     version: "1.15.0"
   effective_dart:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: effective_dart
       url: "https://pub.dartlang.org"
