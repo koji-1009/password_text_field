@@ -1,6 +1,6 @@
 name: password_text_field
 description: PasswordTextField is a TextField that manages the toggle of obscure.
-version: 0.0.2
+version: 1.0.0
 homepage: https://github.com/koji-1009/password_text_field
 
 environment:

@@ -4,4 +4,4 @@ PasswordTextField is a TextField that manages the toggle of obscure.
 
 ## How to use
 
-Replace your `TextField` or `TextFormField`.
+Replace your `TextField`(`PasswordTextField`) or `TextFormField`(`PasswordTextFormField`).
