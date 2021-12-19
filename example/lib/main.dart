@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:password_text_field/password_text_field.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,15 +14,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'password_text_field demo',
-      theme: ThemeData.from(colorScheme: ColorScheme.light()),
-      darkTheme: ThemeData.from(colorScheme: ColorScheme.dark()),
-      home: MyHomePage(),
+      theme: ThemeData.from(
+        colorScheme: const ColorScheme.light(),
+      ),
+      darkTheme: ThemeData.from(
+        colorScheme: const ColorScheme.dark(),
+      ),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -38,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo Page'),
+        title: const Text('Demo Page'),
       ),
       body: Center(
         child: SizedBox(
@@ -52,14 +58,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: Theme.of(context).textTheme.headline6,
               ),
               _smallSpace,
-              PasswordTextField(
+              const PasswordTextField(
                 decoration: InputDecoration(
                   border: UnderlineInputBorder(),
                   hintText: 'underline',
                 ),
               ),
               _mediumSpace,
-              PasswordTextField(
+              const PasswordTextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'outline',
@@ -92,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {
                         _formState.currentState?.validate();
                       },
-                      child: Text('Check'),
+                      child: const Text('Check'),
                     )
                   ],
                 ),
