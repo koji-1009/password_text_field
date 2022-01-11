@@ -18,6 +18,8 @@ class PasswordTextField extends StatefulWidget {
     this.onTap,
     this.decoration = const InputDecoration(),
     this.textInputAction = TextInputAction.done,
+    this.style,
+    this.strutStyle,
     this.autofocus = false,
     this.maxLength = TextField.noMaxLength,
     this.visibleIcon = Icons.visibility,
@@ -75,6 +77,14 @@ class PasswordTextField extends StatefulWidget {
   /// Defaults to [TextInputAction.done].
   final TextInputAction textInputAction;
 
+  /// The style to use for the text being edited.
+  ///
+  /// This text style is also used as the base style for the [decoration].
+  final TextStyle? style;
+
+  /// {@macro flutter.widgets.editableText.strutStyle}
+  final StrutStyle? strutStyle;
+
   /// The maximum number of characters (Unicode scalar values) to allow in the
   /// text field.
   ///
@@ -112,6 +122,8 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       focusNode: widget.focusNode,
       keyboardType: TextInputType.visiblePassword,
       textInputAction: widget.textInputAction,
+      style: widget.style,
+      strutStyle: widget.strutStyle,
       maxLength: widget.maxLength,
       inputFormatters: widget.inputFormatters,
       onChanged: widget.onChanged,
