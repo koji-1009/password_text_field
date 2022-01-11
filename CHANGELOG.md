@@ -1,3 +1,7 @@
+## [1.0.1] - 2022.01.11
+
+* Add TextStyle and StructStyle param
+
 ## [1.0.0] - 2021.12.19
 
 * Stable release
