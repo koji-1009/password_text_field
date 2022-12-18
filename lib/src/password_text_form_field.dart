@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'password_text_field.dart';
+import 'package:password_text_field/src/password_text_field.dart';
 
 /// A [FormField] that contains a [PasswordTextField].
 /// If you want to see the details of the API, check the [TextFormField].
@@ -80,7 +79,7 @@ class PasswordTextFormField extends FormField<String> {
   final TextEditingController? controller;
 
   @override
-  _PasswordTextFormFieldState createState() => _PasswordTextFormFieldState();
+  FormFieldState<String> createState() => _PasswordTextFormFieldState();
 }
 
 /// see [TextFormField] & [_TextFormFieldState]

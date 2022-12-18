@@ -109,7 +109,7 @@ class PasswordTextField extends StatefulWidget {
   final IconData inVisibleIcon;
 
   @override
-  _PasswordTextFieldState createState() => _PasswordTextFieldState();
+  State<PasswordTextField> createState() => _PasswordTextFieldState();
 }
 
 class _PasswordTextFieldState extends State<PasswordTextField> {
