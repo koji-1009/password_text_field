@@ -1,3 +1,8 @@
+## [1.1.0] - 2022.12.19
+
+* flutter_lints v2
+* Update example
+
 ## [1.0.1] - 2022.01.11
 
 * Add TextStyle and StructStyle param
