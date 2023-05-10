@@ -48,8 +48,8 @@ class MyHomePage extends StatelessWidget {
           horizontal: margin,
           vertical: 16,
         ),
-        child: Column(
-          children: const [
+        child: const Column(
+          children: [
             _PasswordWidget(),
             SizedBox(
               height: 32,
