@@ -18,13 +18,17 @@ class MyApp extends StatelessWidget {
       title: 'password_text_field demo',
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
-        brightness: Brightness.light,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.light,
+        ),
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
-        brightness: Brightness.dark,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.dark,
+        ),
       ),
       home: const MyHomePage(),
     );
@@ -50,11 +54,11 @@ class MyHomePage extends StatelessWidget {
         ),
         child: const Column(
           children: [
-            _PasswordWidget(),
+            PasswordWidget(),
             SizedBox(
               height: 32,
             ),
-            _PasswordFormWidget(),
+            PasswordFormWidget(),
           ],
         ),
       ),
@@ -62,8 +66,8 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class _PasswordWidget extends StatelessWidget {
-  const _PasswordWidget();
+class PasswordWidget extends StatelessWidget {
+  const PasswordWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -96,14 +100,14 @@ class _PasswordWidget extends StatelessWidget {
   }
 }
 
-class _PasswordFormWidget extends StatefulWidget {
-  const _PasswordFormWidget();
+class PasswordFormWidget extends StatefulWidget {
+  const PasswordFormWidget({super.key});
 
   @override
-  State<_PasswordFormWidget> createState() => _PasswordFormWidgetState();
+  State<PasswordFormWidget> createState() => _PasswordFormWidgetState();
 }
 
-class _PasswordFormWidgetState extends State<_PasswordFormWidget> {
+class _PasswordFormWidgetState extends State<PasswordFormWidget> {
   final _formState = GlobalKey<FormState>();
   final _textFormFieldController = TextEditingController();
 
