@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 class PasswordTextField extends StatefulWidget {
   /// Creates a Material Design text field that manages visible/inVisible icon.
   const PasswordTextField({
-    Key? key,
+    super.key,
     this.controller,
     this.focusNode,
     this.inputFormatters,
@@ -24,7 +24,7 @@ class PasswordTextField extends StatefulWidget {
     this.maxLength = TextField.noMaxLength,
     this.visibleIcon = Icons.visibility,
     this.inVisibleIcon = Icons.visibility_off,
-  }) : super(key: key);
+  });
 
   /// Controls the text being edited.
   ///

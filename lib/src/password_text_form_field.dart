@@ -9,7 +9,7 @@ import 'package:password_text_field/src/password_text_field.dart';
 class PasswordTextFormField extends FormField<String> {
   /// Creates a [FormField] that contains a [PasswordTextField].
   PasswordTextFormField({
-    Key? key,
+    super.key,
     this.controller,
     FocusNode? focusNode,
     InputDecoration decoration = const InputDecoration(),
@@ -17,8 +17,8 @@ class PasswordTextFormField extends FormField<String> {
     ValueChanged<String>? onChanged,
     VoidCallback? onEditingComplete,
     ValueChanged<String>? onFieldSubmitted,
-    FormFieldSetter<String>? onSaved,
-    FormFieldValidator<String>? validator,
+    super.onSaved,
+    super.validator,
     bool? enabled,
     GestureTapCallback? onTap,
     String initialValue = '',
@@ -32,10 +32,7 @@ class PasswordTextFormField extends FormField<String> {
     IconData visibleIcon = Icons.visibility,
     IconData inVisibleIcon = Icons.visibility_off,
   }) : super(
-          key: key,
           initialValue: controller != null ? controller.text : initialValue,
-          onSaved: onSaved,
-          validator: validator,
           enabled: enabled ?? decoration.enabled,
           autovalidateMode:
               autovalidate ? AutovalidateMode.always : autovalidateMode,
