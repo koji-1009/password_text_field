@@ -1,3 +1,9 @@
+## 2.0.0
+
+* Support all TextField and TextFormField properties
+* Update flutter_lints
+* Add initialObscurity property
+
 ## 1.2.0
 
 * Flutter 3.10.0
