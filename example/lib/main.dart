@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:password_text_field/password_text_field.dart';
 
 void main() {
-  runApp(
-    const MyApp(),
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,20 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'password_text_field demo',
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
-          brightness: Brightness.light,
-        ),
-      ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
-          brightness: Brightness.dark,
-        ),
-      ),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
       home: const MyHomePage(),
     );
   }
@@ -40,26 +26,16 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.sizeOf(context).width;
     final margin = max((width - 640) / 2, 16.0);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Demo Page'),
-      ),
+      appBar: AppBar(title: const Text('Demo Page')),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(
-          horizontal: margin,
-          vertical: 16,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: margin, vertical: 16),
         child: const Column(
-          children: [
-            PasswordWidget(),
-            SizedBox(
-              height: 32,
-            ),
-            PasswordFormWidget(),
-          ],
+          spacing: 16,
+          children: [PasswordWidget(), PasswordFormWidget()],
         ),
       ),
     );
@@ -72,22 +48,14 @@ class PasswordWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      spacing: 8,
       children: [
-        Text(
-          'TextField',
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(
-          height: 8,
-        ),
+        Text('TextField', style: Theme.of(context).textTheme.titleLarge),
         const PasswordTextField(
           decoration: InputDecoration(
             border: UnderlineInputBorder(),
             hintText: 'underline',
           ),
-        ),
-        const SizedBox(
-          height: 16,
         ),
         const PasswordTextField(
           decoration: InputDecoration(
@@ -122,14 +90,9 @@ class _PasswordFormWidgetState extends State<PasswordFormWidget> {
     return Form(
       key: _formState,
       child: Column(
+        spacing: 8,
         children: [
-          Text(
-            'TextFormField',
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          const SizedBox(
-            height: 8,
-          ),
+          Text('TextFormField', style: Theme.of(context).textTheme.titleLarge),
           PasswordTextFormField(
             controller: _textFormFieldController,
             validator: (value) {
@@ -139,9 +102,6 @@ class _PasswordFormWidgetState extends State<PasswordFormWidget> {
 
               return null;
             },
-          ),
-          const SizedBox(
-            height: 16,
           ),
           OutlinedButton(
             onPressed: () {
