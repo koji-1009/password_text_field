@@ -4,8 +4,8 @@ version: 2.0.0
 homepage: https://github.com/koji-1009/password_text_field
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.0.0"
+  sdk: ">=3.9.0 <4.0.0"
+  flutter: ">=3.35.0"
 
 dependencies:
   flutter:
@@ -14,4 +14,4 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^6.0.0
