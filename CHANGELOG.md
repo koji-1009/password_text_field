@@ -1,3 +1,9 @@
+## 3.0.0
+
+* Flutter 3.35.0
+* Code cleanup
+* flutter_lints v6.0.0
+
 ## 2.0.0
 
 * Support all TextField and TextFormField properties
