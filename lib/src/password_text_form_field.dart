@@ -284,7 +284,7 @@ class _PasswordTextFormFieldState extends FormFieldState<String> {
   }
 
   @override
-  void didUpdateWidget(TextFormField oldWidget) {
+  void didUpdateWidget(PasswordTextFormField oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (_textFormField.controller != oldWidget.controller) {
       oldWidget.controller?.removeListener(_handleControllerChanged);

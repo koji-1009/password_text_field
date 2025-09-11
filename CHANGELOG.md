@@ -1,3 +1,7 @@
+## 3.0.1
+
+* Fix type error
+
 ## 3.0.0
 
 * Flutter 3.35.0
