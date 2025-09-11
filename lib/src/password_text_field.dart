@@ -15,6 +15,7 @@ class PasswordTextField extends StatefulWidget {
     this.visibleIcon = Icons.visibility,
     this.inVisibleIcon = Icons.visibility_off,
     this.initialObscurity = false,
+    this.iconPadding = EdgeInsets.zero,
     this.groupId = EditableText,
     this.controller,
     this.focusNode,
@@ -94,6 +95,10 @@ class PasswordTextField extends StatefulWidget {
   ///
   /// Defaults is [Icons.visibility_off].
   final IconData inVisibleIcon;
+
+  /// Padding around the icon.
+  /// Defaults is [EdgeInsets.zero].
+  final EdgeInsets iconPadding;
 
   /// The obscure feature is enabled by default.
   ///
@@ -313,11 +318,14 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     return TextField(
       obscureText: _obscure,
       decoration: widget.decoration.copyWith(
-        suffixIcon: IconButton(
-          icon: Icon(_obscure ? widget.inVisibleIcon : widget.visibleIcon),
-          onPressed: () => setState(() {
-            _obscure = !_obscure;
-          }),
+        suffixIcon: Padding(
+          padding: widget.iconPadding,
+          child: IconButton(
+            icon: Icon(_obscure ? widget.inVisibleIcon : widget.visibleIcon),
+            onPressed: () => setState(() {
+              _obscure = !_obscure;
+            }),
+          ),
         ),
       ),
       groupId: widget.groupId,
