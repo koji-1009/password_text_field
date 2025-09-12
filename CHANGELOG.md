@@ -1,3 +1,8 @@
+## 3.1.0
+
+* Fix hot reload issue
+* Add iconPadding property
+
 ## 3.0.1
 
 * Fix type error
